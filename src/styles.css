@@ -4,6 +4,70 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Base resets for full responsiveness ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Prevents font size inflation on mobile */
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+
 body {
   font-family: 'DM Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  /* Prevents horizontal scroll caused by overflowing elements */
+  overflow-x: hidden;
+}
+
+/* ── Touch target minimum sizes (WCAG 2.5.5) ── */
+button, a, [role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  cursor: pointer;
+}
+
+/* ── Smooth scrolling ── */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ── Images always responsive ── */
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Tables don't overflow ── */
+table {
+  border-collapse: collapse;
+}
+
+/* ── Code blocks ── */
+code {
+  word-break: break-all;
+}
+
+/* ── Input / textarea always full width on mobile ── */
+input, textarea, select {
+  max-width: 100%;
+}
+
+/* ── Scrollbar styling (optional, subtle) ── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #D6E8DC;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #1D7A56;
 }
